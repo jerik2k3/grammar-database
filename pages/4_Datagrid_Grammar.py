@@ -1,3 +1,4 @@
+import streamlit as st
 from st_aggrid import AgGrid, GridOptionsBuilder
 import pandas as pd
 import sqlalchemy
@@ -14,8 +15,23 @@ grid_options = GridOptionsBuilder.from_dataframe(df)
 grid_options.configure_pagination(paginationPageSize=rows_per_page)
 grid_options.configure_side_bar()
 
+st.title('Grammar Database')
+
+# Custom CSS to set width to 100%
+st.markdown(
+    """
+    <style>
+    .ag-theme-alpine {
+        width: 100%;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 AgGrid(df,
     gridOptions=grid_options.build(),
+    width=100%,
     custom_css={
         "#gridToolBar": {
             "padding-bottom": "0px !important",
