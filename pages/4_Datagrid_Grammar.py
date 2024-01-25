@@ -10,7 +10,7 @@ df = pd.read_sql_table('grammar', engine)
 rows_per_page = 5
 
 # Define the grid options
-grid_options = GridOptionsBuilder.from_dataframe(data)
+grid_options = GridOptionsBuilder.from_dataframe(df)
 grid_options.configure_pagination(paginationPageSize=rows_per_page)
 grid_options.configure_side_bar()
 
