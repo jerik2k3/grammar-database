@@ -22,8 +22,11 @@ st.markdown(
     """
     <style>
     .ag-theme-alpine {
+        width: 100%;        
+    }
+    .st-emotion-cache-1y4p8pa {
         width: 100%;
-        max-width: "100% !important";
+        padding: 6rem 1rem 10rem;        
     }
     </style>
     """,
