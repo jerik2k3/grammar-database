@@ -26,7 +26,8 @@ st.markdown(
     }
     .st-emotion-cache-1y4p8pa {
         width: 100%;
-        padding: 6rem 1rem 10rem;        
+        padding: 6rem 1rem 10rem;
+        max-width: "100% !importnant";        
     }
     </style>
     """,
