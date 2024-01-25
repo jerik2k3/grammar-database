@@ -23,6 +23,7 @@ st.markdown(
     <style>
     .ag-theme-alpine {
         width: 100%;
+        max-width: "100% !important";
     }
     </style>
     """,
