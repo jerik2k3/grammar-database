@@ -15,7 +15,7 @@ grid_options.configure_pagination(paginationPageSize=rows_per_page)
 grid_options.configure_side_bar()
 
 AgGrid(df,
-    gridOptions=grid_options,
+    gridOptions=grid_options.build(),
     custom_css={
         "#gridToolBar": {
             "padding-bottom": "0px !important",
