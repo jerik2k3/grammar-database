@@ -30,8 +30,7 @@ st.markdown(
 )
 
 AgGrid(df,
-    gridOptions=grid_options.build(),
-    width=100%,
+    gridOptions=grid_options.build(),    
     custom_css={
         "#gridToolBar": {
             "padding-bottom": "0px !important",
