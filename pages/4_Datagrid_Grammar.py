@@ -8,7 +8,7 @@ df = pd.read_sql_table('grammar', engine)
 #df = pd.read_csv('https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv')
 
 # Number of rows per page
-rows_per_page = 5
+rows_per_page = 100
 
 # Define the grid options
 grid_options = GridOptionsBuilder.from_dataframe(df)
