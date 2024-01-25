@@ -1,5 +1,7 @@
 altair
 numpy
 pandas
+sqlalchemy
 pydeck
 streamlit
+streamlit-aggrid
