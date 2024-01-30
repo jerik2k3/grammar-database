@@ -17,6 +17,17 @@ grid_options.configure_side_bar()
 
 st.title('OpenAlex API')
 
+title = st.text_input('Search for Articles here', '')
+st.write('Keyword is', title)
+
+genre = st.radio(
+    "",
+    [":rainbow[Abstract]", "***Full Text***", "Title :movie_camera:", "Display Name"],
+    index=None,
+)
+
+st.write("You selected:", genre)
+
 # Custom CSS to set width to 100%
 st.markdown(
     """
