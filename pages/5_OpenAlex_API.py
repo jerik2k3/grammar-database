@@ -21,7 +21,7 @@ title = st.text_input('Search for Articles here', '')
 st.write('Keyword is', title)
 
 genre = st.radio(
-    "",
+    "Category",
     [":rainbow[Abstract]", "***Full Text***", "Title :movie_camera:", "Display Name"],
     index=None,
 )
