@@ -2,6 +2,7 @@ import streamlit as st
 from st_aggrid import AgGrid, GridOptionsBuilder
 import pandas as pd
 import sqlalchemy
+import requests
 
 engine = sqlalchemy.create_engine("mssql+pyodbc://admin:JYADzncw132MnajClFrF@crawlerdatabase.c61596xtihb7.ap-southeast-1.rds.amazonaws.com/nlpresults?driver=ODBC+Driver+17+for+SQL+Server", fast_executemany=True, connect_args={'charset':'utf8', 'convert_unicode': True})
 df = pd.read_sql_table('grammar', engine)
@@ -45,13 +46,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.json({
-    'foo': 'bar',
-    'baz': 'boz',
-    'stuff': [
-        'stuff 1',
-        'stuff 2',
-        'stuff 3',
-        'stuff 5',
-    ],
-})
+data = requests.get("https://api.openalex.org/works?filter=abstract.search:artificial%20intelligence%20mlops").json()
+
+st.json(data)
