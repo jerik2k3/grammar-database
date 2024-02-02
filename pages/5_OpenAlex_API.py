@@ -45,10 +45,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-AgGrid(df,
-    gridOptions=grid_options.build(),    
-    custom_css={
-        "#gridToolBar": {
-            "padding-bottom": "0px !important",
-        }
-    })
+st.json({
+    'foo': 'bar',
+    'baz': 'boz',
+    'stuff': [
+        'stuff 1',
+        'stuff 2',
+        'stuff 3',
+        'stuff 5',
+    ],
+})
