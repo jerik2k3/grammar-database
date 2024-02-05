@@ -48,4 +48,4 @@ st.markdown(
 
 data = requests.get("https://api.openalex.org/works?filter=abstract.search:artificial%20intelligence%20mlops").json()
 
-st.json(data)
+st.json(data, expanded=False)
