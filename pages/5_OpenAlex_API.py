@@ -52,7 +52,7 @@ with st.form("alex_form"):
 
     if submitted:
         st.write("Searching:", title)
-        if genre == 'Abstract':
+        if genre == ':rainbow[Abstract]':
             data = requests.get("https://api.openalex.org/works?filter=abstract.search:" + title).json()
 
     st.json(data, expanded=False)
