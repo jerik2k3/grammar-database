@@ -46,6 +46,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+data = []
+
 if(genre == 'Abstract'):
     data = requests.get("https://api.openalex.org/works?filter=abstract.search:" + title).json()
 
