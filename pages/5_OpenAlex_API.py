@@ -18,37 +18,42 @@ rows_per_page = 25
 
 st.title('OpenAlex API')
 
-title = st.text_input('Search for Articles here', '')
-st.write('Keyword is', title)
+with st.form("alex_form"):
+    title = st.text_input('Search for Articles here', '')
+    submitted = st.form_submit_button("Search")
+    st.write('Keyword is', title)
 
-genre = st.radio(
-    "Category",
-    [":rainbow[Abstract]", "***Full Text***", "Title :movie_camera:", "Display Name"],
-    index=0,
-)
+    genre = st.radio(
+        "Category",
+        [":rainbow[Abstract]", "***Full Text***", "Title :movie_camera:", "Display Name"],
+        index=0,
+    )
 
-st.write("You selected:", genre)
+    st.write("You selected:", genre)
 
-# Custom CSS to set width to 100%
-st.markdown(
-    """
-    <style>
-    .ag-theme-alpine {
-        width: 100%;        
-    }
-    .st-emotion-cache-1y4p8pa {
-        width: 100%;
-        padding: 6rem 1rem 10rem;
-        max-width: 100% !important;        
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+    
 
-data = {}
+    # Custom CSS to set width to 100%
+    st.markdown(
+        """
+        <style>
+        .ag-theme-alpine {
+            width: 100%;        
+        }
+        .st-emotion-cache-1y4p8pa {
+            width: 100%;
+            padding: 6rem 1rem 10rem;
+            max-width: 100% !important;        
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-if(genre == 'Abstract'):
-    data = requests.get("https://api.openalex.org/works?filter=abstract.search:" + title).json()
+    data = {}
 
-st.json(data, expanded=False)
+    if submitted:
+        if genre == 'Abstract':
+            data = requests.get("https://api.openalex.org/works?filter=abstract.search:" + title).json()
+
+    st.json(data, expanded=False)
