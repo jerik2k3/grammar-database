@@ -61,9 +61,11 @@ with st.form("alex_form"):
     with col2:
         next = st.form_submit_button("Next", use_container_width=True)        
     
-    if next:
+    if submitted:
+        st.session_state["page"] = 1
+    elif next:
         st.session_state["page"] += 1
-    if prev:
+    elif prev:
         st.session_state["page"] -= 1
 
     if submitted or next or prev:
