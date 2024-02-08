@@ -52,12 +52,15 @@ with st.form("alex_form"):
 
     if "page" not in st.session_state:
         st.session_state["page"] = 1
-    
-    next = st.form_submit_button("Next")
+
+    col1, col2 = st.columns([1,1])
+        
+    with col1:
+        next = st.form_submit_button("Next", use_container_width=True)
     if next:
         st.session_state["page"] += 1
-
-    prev = st.form_submit_button("Previous")
+    with col2:
+        prev = st.form_submit_button("Previous", use_container_width=True)
     if prev:
         st.session_state["page"] -= 1
 
