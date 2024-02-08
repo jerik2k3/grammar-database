@@ -60,8 +60,8 @@ with st.form("alex_form"):
     if "page" not in st.session_state:
         st.session_state["page"] = 1
     
-    if st.button("Next"):
+    if st.form_submit_button("Next"):
         st.session_state["page"] += 1
 
-    if st.button("Previous"):
+    if st.form_submit_button("Previous"):
         st.session_state["page"] -= 1
