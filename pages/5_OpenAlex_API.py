@@ -68,5 +68,11 @@ with st.form("alex_form"):
         st.write("Searching:", title)
         if genre == ':rainbow[Abstract]':
             data = requests.get(f"https://api.openalex.org/works?filter=abstract.search:{title}&page={st.session_state.page}").json()
+        elif genre == '***Full Text***':
+            data = requests.get(f"https://api.openalex.org/works?filter=fulltext.search:{title}&page={st.session_state.page}").json()
+        elif genre == 'Title :movie_camera:':
+            data = requests.get(f"https://api.openalex.org/works?filter=title.search:{title}&page={st.session_state.page}").json()
+        elif genre == 'Display Name':
+            data = requests.get(f"https://api.openalex.org/works?filter=display_name.search:{title}&page={st.session_state.page}").json()
 
     st.json(data, expanded=False)
