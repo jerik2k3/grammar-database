@@ -24,7 +24,7 @@ st.write('Keyword is', title)
 genre = st.radio(
     "Category",
     [":rainbow[Abstract]", "***Full Text***", "Title :movie_camera:", "Display Name"],
-    index=None,
+    index=0,
 )
 
 st.write("You selected:", genre)
@@ -46,6 +46,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-data = requests.get("https://api.openalex.org/works?filter=abstract.search:artificial%20intelligence%20mlops").json()
+if(genre == 'Abstract'):
+    data = requests.get("https://api.openalex.org/works?filter=abstract.search:" + title).json()
 
 st.json(data, expanded=False)
