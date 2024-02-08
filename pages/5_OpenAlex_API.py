@@ -29,9 +29,7 @@ with st.form("alex_form"):
         index=0,
     )
 
-    st.write("You selected:", genre)
-
-    
+    st.write("You selected:", genre)    
 
     # Custom CSS to set width to 100%
     st.markdown(
@@ -53,6 +51,7 @@ with st.form("alex_form"):
     data = {}
 
     if submitted:
+        st.write("Searching:", title)
         if genre == 'Abstract':
             data = requests.get("https://api.openalex.org/works?filter=abstract.search:" + title).json()
 
