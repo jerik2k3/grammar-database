@@ -53,6 +53,15 @@ with st.form("alex_form"):
     if submitted:
         st.write("Searching:", title)
         if genre == ':rainbow[Abstract]':
-            data = requests.get("https://api.openalex.org/works?filter=abstract.search:" + title).json()
+            data = requests.get(f"https://api.openalex.org/works?filter=abstract.search:{title}&page={st.session_state.page}").json()
 
     st.json(data, expanded=False)
+
+    if "page" not in st.session_state:
+        st.session_state["page"] = 1
+    
+    if st.button("Next"):
+        st.session_state["page"] += 1
+
+    if st.button("Previous"):
+        st.session_state["page"] -= 1
